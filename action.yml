@@ -9,14 +9,11 @@ inputs:
   environment:
     description: Environment name you want to deploy
     required: true
-  config-file:
-    description: Elastic Beanstalk config file created by init command
-    required: false
   aws-access-key-id:
-    description: ${{ secrets.AWS_ACCESS_KEY_ID }}
+    description: secrets.AWS_ACCESS_KEY_ID
     required: true
   aws-secret-access-key:
-    description: ${{ secrets.AWS_ACCESS_KEY_ID }}
+    description: secrets.AWS_ACCESS_KEY_ID
     required: true
   optional-args:
     description: Optional arguments
