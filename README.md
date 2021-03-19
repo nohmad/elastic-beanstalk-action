@@ -22,7 +22,7 @@ sub-command to perform. `deploy` by default.
 
 ### config-file
 
-The path of `.elasticbeanstalk/config.yml` if you don't have in your repository.
+Content of `.elasticbeanstalk/config.yml` if you don't have in your repository.
 
 ### environment
 
@@ -31,6 +31,7 @@ The path of `.elasticbeanstalk/config.yml` if you don't have in your repository.
 ### optional-args
 
 `--nohang` is usually recommended if you want to save the billing time.
+
 ### aws-access-key-id
 
 **Required** `secrets.AWS_ACCESS_KEY_ID`
