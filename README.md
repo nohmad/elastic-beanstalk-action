@@ -8,6 +8,7 @@ This action makes the command `eb` in the `awsebcli` package available for you t
     with:
       sub-command: deploy
       environment: ${{ github.event.inputs.stage }}
+      config-file: ${{ secrets.EB_CONFIG_YAML }}
       optional-args: '--nohang'
       aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
       aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
