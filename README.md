@@ -6,11 +6,11 @@ This action makes the command `eb` in the `awsebcli` package available for you t
   - name: Deploy to Elastic Beanstalk
     uses: nohmad/elastic-beanstalk-action@master
     with:
-      action: deploy
+      sub-command: deploy
       environment: ${{ github.event.inputs.stage }}
+      optional-args: '--nohang'
       aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
       aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      optional-args: '--nohang'
 ```
 
 # Inputs
