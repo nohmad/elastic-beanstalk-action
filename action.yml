@@ -1,0 +1,34 @@
+name: Elastic Beanstalk Action
+description: Deploy to Elastic Beanstalk
+
+inputs:
+  sub-command:
+    description: sub-command to perform
+    required: true
+    default: deploy
+  environment:
+    description: Environment name you want to deploy
+    required: true
+  config-file:
+    description: Elastic Beanstalk config file created by init command
+    required: false
+  aws-access-key-id:
+    description: ${{ secrets.AWS_ACCESS_KEY_ID }}
+    required: true
+  aws-secret-access-key:
+    description: ${{ secrets.AWS_ACCESS_KEY_ID }}
+    required: true
+  optional-args:
+    description: Optional arguments
+    required: false
+
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+    - ${{ inputs.sub-command }}
+    - ${{ inputs.environment }}
+    - ${{ inputs.optional-args }}
+  env:
+    AWS_ACCESS_KEY_ID: ${{ inputs.aws-access-key-id }}
+    AWS_SECRET_ACCESS_KEY: ${{ inputs.aws-secret-access-key }}
